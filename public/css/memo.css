@@ -1,0 +1,82 @@
+.memo-list {
+  display: inline-flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+h1 {
+  text-align: center;
+}
+.word-column {
+  display: flex;
+  flex-direction: column;
+}
+.word-container {
+  display: flex;
+  justify-content: center;
+}
+.word-column .word {
+  display: inline-block;
+  padding: 4px;
+  font-weight: bold;
+  font-size: 1.5rem;
+  background-color: white;
+  z-index: 3;
+  margin: 3px 0;
+  text-align: center;
+}
+
+.memo-container {
+}
+
+.memo {
+  position: relative;
+  display: inline-block;
+  background-color: #f5e37b;
+  box-shadow: 5px 5px 5px black;
+  margin: 30px 15px;
+
+  min-width: 170px;
+  min-height: 170px;
+  max-width: 170px;
+  max-height: 170px;
+}
+
+.discard-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  left: 100%;
+  transform: translate(-50%, -50%);
+  width: 40px;
+  height: 40px;
+  border-radius: 100%;
+  background-color: white;
+}
+.discard-icon i {
+  font-size: 20px;
+}
+.discard-icon:hover {
+  cursor: pointer;
+}
+.edit-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 100%;
+  left: 100%;
+  transform: translate(-50%, -50%);
+  width: 40px;
+  height: 40px;
+  border-radius: 100%;
+  background-color: white;
+}
+.edit-icon i {
+  font-size: 20px;
+}
+.edit-icon:hover {
+  cursor: pointer;
+}

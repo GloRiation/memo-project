@@ -1,0 +1,15 @@
+.background {
+  position: fixed;
+  inset: 0;
+  background-image: url(/assets/wall-background.webp);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  z-index: -1;
+  opacity: 0.7;
+}
+
+.item-center {
+  display: flex;
+  justify-content: center;
+}
