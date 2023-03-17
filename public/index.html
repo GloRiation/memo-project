@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="/css/style.css" />
     <link rel="stylesheet" href="/css/memo.css" />
     <link rel="stylesheet" href="/css/form.css" />
+    <link rel="stylesheet" href="/admin/css/control.css">
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
@@ -44,7 +45,7 @@
             </form>
 
             <form action="/memoImage" class="image-form" method="POST" enctype="multipart/form-data">
-              <input type="file" name="memoImage"/>
+              <input type="file" name="memoImage" accept="image"/>
               <div class="item-center">
                 <input
                   class="submit-file-button"
@@ -122,6 +123,7 @@
         </div>
       </div>
     </div>
+    <script src="admin/js/controls.js"></script>
     <script src="counter.js"></script>
     <script src="memos.js"></script>
     <script src="./js/index.js"></script>

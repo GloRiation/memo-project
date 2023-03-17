@@ -43,7 +43,7 @@ h1 {
 }
 
 .discard-icon {
-  display: flex;
+  display: none;
   justify-content: center;
   align-items: center;
   position: absolute;
@@ -62,7 +62,7 @@ h1 {
   cursor: pointer;
 }
 .edit-icon {
-  display: flex;
+  display: none;
   justify-content: center;
   align-items: center;
   position: absolute;

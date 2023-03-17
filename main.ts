@@ -12,12 +12,9 @@ import formidable from 'formidable'
 declare module 'express-session' {
     interface SessionData {
         counter: number
-        // username: string
-        // password: string
+        username: string
     }
-    interface Session {
-        user: boolean;
-    }
+
 }
 type Memo = {
     id:number,
@@ -50,8 +47,8 @@ const isLoggedIn = (
     res: express.Response,
     next: express.NextFunction
   ) => {
-    console.log("user", req.session?.user)
-    if (req.session?.user) {
+    console.log("user", req.session?.username)
+    if (req.session?.username) {
       //called Next here
       next();
     } else {
@@ -169,12 +166,12 @@ async function main() {
     app.post('/login', (req, res) => {
         if (loginCheck(req.body.email, req.body.password, loginInfo)) {
             console.log("login success");
-            req.session.user = true;
+            req.session.username = req.body.email;
             req.session.save();
-            res.redirect("/admin")
+            res.redirect("/")
         } else {
-            req.session.user = false;
             console.log("login fail")
+            res.status(403);
             res.end("trying to login fail")
         }
         
@@ -193,13 +190,11 @@ async function main() {
         try {
             await saveMemos(memos);
             res.status(201)
-            res.end("saved new memo");
+            res.redirect('/');
         } catch (error) {
             res.status(507);
             res.end('failed to save new memo: ' + error)
         }
-        res.end("trying to post a new memo");
-
     })
 
 
