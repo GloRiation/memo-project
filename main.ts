@@ -8,6 +8,7 @@ import fs from 'fs'
 import pfs from 'fs/promises'
 import dayjs from 'dayjs'
 import formidable from 'formidable'
+import { isLoggedIn } from "./guard";
 
 declare module 'express-session' {
     interface SessionData {
@@ -42,20 +43,7 @@ async function loadLoginInfo(): Promise<User[]> {
 async function saveMemos(memos: Memo[]) {
     await jsonfile.writeFile('memos.json', memos)
 }
-const isLoggedIn = (
-    req: express.Request,
-    res: express.Response,
-    next: express.NextFunction
-  ) => {
-    console.log("user", req.session?.username)
-    if (req.session?.username) {
-      //called Next here
-      next();
-    } else {
-      // redirect to index page
-      res.redirect("/index.html")
-    }
-};
+
 
 function loginCheck(username:string, password:string, loginInfo: User[]) {
     let loginFlag = false;
